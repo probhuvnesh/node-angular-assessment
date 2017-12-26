@@ -1,0 +1,100 @@
+<div class="container">
+    <header class="page-header">
+        <h1>Payments-o-matic</h1>
+    </header>
+    <div class="row">
+        <section class="col-lg-4">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="payment in vm.payments"
+                ng-class="{'active': payment == vm.activeTabPayment && vm.payment}" ng-click="vm.showDetails(payment)">{{payment.counterParty}}</li>
+            </ul>
+        </section>
+        <section class="col-lg-8">
+            
+            <form role="form" class="form-horizontal" novalidate="novalidate" ng-show="vm.payment" ng-submit="vm.updatePayment()">
+                <div class="form-group">
+                    <label for="inputCounterparty" class="col-sm-3 control-label">Counterparty</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="inputCounterparty" ng-model="vm.payment.counterParty">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputValuedate" class="col-sm-3 control-label">Value Date</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="inputValuedate" ng-model="vm.payment.valueDate">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputCreditaccount" class="col-sm-3 control-label">Credit Account</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="inputCreditaccount" ng-model="vm.payment.creditAccount">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputAmount" class="col-sm-3 control-label">Amount</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="inputAmount" ng-model="vm.payment.amount">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputCurrency" class="col-sm-3 control-label">Currency</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="inputCurrency" ng-model="vm.payment.currency">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-4">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="button" class="btn btn-default" ng-click="vm.cancel()">Cancel</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="form-group" ng-show="!vm.payment && !vm.addNewPaymentForm">
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-primary" ng-click="vm.addPaymentForm()">Add New Payment</button>
+                </div>
+            </div><br>
+
+            <form role="form" class="form-horizontal" novalidate="novalidate" ng-show="vm.addNewPaymentForm" ng-submit="vm.addPayment()">
+                <div class="form-group">
+                    <label for="inputCounterparty" class="col-sm-3 control-label">Counterparty</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="inputCounterparty" ng-model="vm.payment.counterParty">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputValuedate" class="col-sm-3 control-label">Value Date</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="inputValuedate" ng-model="vm.payment.valueDate">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputCreditaccount" class="col-sm-3 control-label">Credit Account</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="inputCreditaccount" ng-model="vm.payment.creditAccount">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputAmount" class="col-sm-3 control-label">Amount</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="inputAmount" ng-model="vm.payment.amount">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputCurrency" class="col-sm-3 control-label">Currency</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="inputCurrency" ng-model="vm.payment.currency">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-4">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-default" ng-click="vm.cancel()">Cancel</button>
+                    </div>
+                </div>
+            </form>
+
+        </section>
+    </div>
+</div>

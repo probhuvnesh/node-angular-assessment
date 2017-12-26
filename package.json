@@ -1,0 +1,26 @@
+{
+  "name": "node-angular-assessment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.7",
+    "angular-route": "^1.6.7",
+    "angular-ui-router": "^0.4.3",
+    "body-parser": "^1.18.2",
+    "bootstrap": "^3.3.7",
+    "express": "^4.16.2",
+    "jquery": "^3.2.1",
+    "mysql": "^2.15.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "morgan": "^1.9.0",
+    "nodemon": "^1.13.3"
+  }
+}
